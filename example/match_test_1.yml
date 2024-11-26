@@ -1,0 +1,64 @@
+%YAML:1.0
+
+calib_intrinsic: "example/intrinsics.yml"
+calib_extrinsic: "example/extrinsics.yml"
+
+algorithm: sgbm
+offset: 0
+
+bounding_box:
+    max_x: 8.0
+    min_x: -8.0
+    max_y: 19.0
+    min_y: -19.0
+    max_z: 11.0
+    min_z: -2.0
+
+#
+# debugging: display rectified image, disparity map, 3d point cloud (no)
+#
+display_options:
+    rectified: 1
+    disparity: 1
+    cloud: 0
+
+rgb: 1
+
+#
+# Intrinsics: adjust FoV (multiplicative factor) and image center (in pixels):
+#             left refers to camera 1 (M1, D1), right to camera 2 (M2, D2)
+mul_left: 1.0001
+pos_left_x: 0.0
+pos_left_y: -0.00
+
+mul_right: 1.0001
+pos_right_x: 0.0
+pos_right_y: -0.00
+
+
+#
+# Extrinsics: translation parameters - added to the T matrix values 
+#
+
+#
+# Extrinsics: rotation parameters - added to the R matrix values 
+#
+rotate_180: true
+rot_x: 0.002882276329806893
+rot_y: 0.0006651406914938984
+rot_z: -0.0001108567819156497
+
+
+#
+# stereo matching parameters for sgbm
+#
+minDisparity:            0    
+numDisparities:        140  
+blockSize:               7 
+speckleWindowSize:      20  
+speckleRange:            2   
+disp12MaxDiff:           1   
+preFilterCap:            0   
+uniquenessRatio:         5   
+scale:                 0.5 
+
